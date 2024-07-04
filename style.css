@@ -12,7 +12,7 @@ body {
 }
 #app {
   display: flex;
-  width: 100%;
+  width: 100%;а
   height: 100%;
  
 }
@@ -249,7 +249,7 @@ body {
   border: none;
   position: absolute;
   display: none;
-  cursor: pointer;
+  cursor:pointer;
 }
 #message-text{
   outline: none;
