@@ -1,0 +1,285 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #F6F6F6;
+  display: flex;
+  height: 100vh;
+  font-family: "Roboto", sans-serif;
+}
+*{
+  font-family: "Roboto", sans-serif;
+}
+#app {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+#user-selection {
+  margin: auto;
+  text-align: center;
+}
+
+.user-btn {
+  display: block;
+  margin: 10px auto;
+  padding: 10px 20px;
+  font-size: 16px;
+  background: #0088cc;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.user-btn:hover {
+  background: #007bb5;
+}
+
+#chat {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+#sidebar {
+  width: 35%;
+
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+#sidebar h2 {
+  margin: 0;
+  padding: 20px;
+
+  text-align: center;
+}
+
+#user-list {
+  flex: 1;
+  overflow-y: auto;
+}
+
+#user-list button {
+  width: 100%;
+
+  border: none;
+  font-weight: 500;
+  font-size: 15px;
+  padding-left: 0px;
+  text-align: left;
+  cursor: pointer;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  background: transparent;
+}
+
+.message-wrapper{
+  border-bottom: 0.33px solid rgba(60, 60, 67, 0.33);
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  cursor: pointer;
+  
+}
+
+#user-list .message-wrapper:hover {
+  border-bottom: 0.33px solid black;
+  transition: 0.3s ease-in-out;
+}
+
+.user-message {
+  font-size:15px;
+
+  max-width: 60%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #8E8E93;
+}
+
+.message-time {
+  font-size: 0.8em;
+  color: #bbb;
+
+  display: flex;
+  margin-left: auto;
+}
+
+.unread-badge {
+  background: #d9534f;
+  color: white;
+  font-size: 0.8em;
+  padding: 2px 5px;
+  border-radius: 12px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+#chat-window {
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  background: white;
+  height: 100%;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+}
+
+#chat-with{
+  margin: 0 auto;
+}
+
+#chat-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  color: black;
+  padding: 20px;
+  text-align: center;
+  justify-content: flex-start;
+  position: relative;
+}
+
+#messages {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  background: url("./images/Rectangle.png");
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+}
+
+#message-input {
+  display: flex;
+  border-top: 1px solid #ccc;
+}
+
+#message-input input {
+  flex: 1;
+  padding: 10px;
+  border: none;
+}
+
+#message-input button {
+  padding: 10px 20px;
+  border: none;
+
+  color: white;
+  cursor: pointer;
+}
+
+#logout-btn {
+  padding: 10px;
+  margin: 10px;
+  border: none;
+  background: transparent;
+  width: 40px;
+  color: white;
+  cursor: pointer;
+  z-index:100;
+}
+.message {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #FFFFFF;
+  padding: 7px 18px;
+  border-radius: 20px;
+  width: fit-content;
+  align-items: flex-end;
+  gap: 15px;
+  padding-right: 33px;
+  position: relative;
+}
+
+.message.current-user {
+  justify-content: flex-end;
+  text-align: right;
+  justify-self: flex-end;
+  margin-left: auto;
+}
+
+.message-time {
+  font-size: 11px;
+  color: #bbb;
+
+}
+
+.message-status {
+  font-size: 0.8em;
+
+  color: #bbb;
+  position: absolute;
+  right:10px;
+  bottom: 4px;
+  width: 20px;
+  height: 20px;
+  background: url("./images/Shape.png") no-repeat center;
+
+}
+
+.message-status.read {
+  background: url("./images/Read.png") no-repeat center;
+}
+
+.message-status.unread {
+  background: url("./images/Shape.png") no-repeat center;
+}
+
+.back-btn{
+  background: none;
+  border: none;
+  position: absolute;
+  display: none;
+}
+#message-text{
+  outline: none;
+}
+#message-text::placeholder{
+  font-family: "Roboto", sans-serif;
+
+  font-size: 14px;
+}
+#send-message{
+  background: none;
+  padding: none;
+  width: fit-content;
+}
+
+
+
+@media only screen and (max-width: 900px) {
+ #sidebar{
+  width: 100%;
+ }
+
+ #user-list{
+  z-index: 20;
+ }
+ .back-btn{
+  display: block;
+ }
+
+  #chat-window.hidden {
+    opacity: 0;
+    visibility: 0;
+    position: absolute;
+    z-index: 0;
+  }
+
+  #chat-window{
+    width: 100%;
+    position: absolute;
+    z-index: 100;
+  }
+}
