@@ -157,6 +157,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const chatKey = getChatKey(user, chatUser);
       let chatMessages = JSON.parse(localStorage.getItem(chatKey)) || [];
       chatMessages = chatMessages.map(msg => {
+        console.log(msg)
           if (msg.user !== user && !msg.read) {
               msg.read = true;
               notifyUserReadStatusChange(user, chatUser);
@@ -165,6 +166,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
       localStorage.setItem(chatKey, JSON.stringify(chatMessages));
       updateUserMessages();
+      loadMessages()
   }
 
   function notifyUserReadStatusChange(user, chatUser) {
