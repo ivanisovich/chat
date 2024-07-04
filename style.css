@@ -194,6 +194,8 @@ body {
   color: white;
   cursor: pointer;
   z-index:100;
+  position: absolute;
+  bottom: 10px;
 }
 .message {
   margin-bottom: 10px;
