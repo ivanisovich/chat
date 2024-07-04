@@ -2,7 +2,7 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background: #F6F6F6;
+  background: white;
   display: flex;
   height: 100vh;
   font-family: "Roboto", sans-serif;
@@ -56,6 +56,7 @@ body {
   padding: 20px;
 
   text-align: center;
+
 }
 
 #user-list {
@@ -81,16 +82,18 @@ body {
 }
 
 .message-wrapper{
-  border-bottom: 0.33px solid rgba(60, 60, 67, 0.33);
+  border-bottom: 0.33px solid transparent ;
   display: flex;
   gap: 10px;
   padding: 10px;
+ 
   cursor: pointer;
-  
+  position: relative;
+  background: white;
 }
 
 #user-list .message-wrapper:hover {
-  border-bottom: 0.33px solid black;
+  background: #F2F2F2;
   transition: 0.3s ease-in-out;
 }
 
@@ -113,18 +116,22 @@ body {
 }
 
 .unread-badge {
-  background: #d9534f;
+  background: #037EE5;
+  bottom: 10px;
   color: white;
   font-size: 0.8em;
   padding: 2px 5px;
   border-radius: 12px;
   position: absolute;
-  top: 10px;
+ 
+  display: flex;
+  padding: 4px 8px;
   right: 10px;
 }
 
 #chat-window {
   width: 75%;
+  z-index: 100;
   display: flex;
   flex-direction: column;
   background: white;

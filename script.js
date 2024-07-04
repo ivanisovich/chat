@@ -10,7 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const chatWindow = document.querySelector("#chat-window");
   const returnButton = document.querySelector(".back-btn")
 
-  // Check if this is a new tab
   if (!window.name) {
       window.name = Math.random().toString();
       sessionStorage.clear();
@@ -222,5 +221,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   returnButton.addEventListener("click",()=>{
     chatWindow.classList.add("hidden")
+  })
+
+
+  document.addEventListener("click",(e)=>{
+    if(e.target.closest.id = "chat-window"){
+      markMessagesAsRead(currentUser, currentChatUser);
+    }
   })
 });
